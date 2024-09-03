@@ -1,7 +1,8 @@
 {
   "name": "nuxlite",
-  "version": "1.0.0",
-  "private": true,
+  "type": "module",
+  "version": "0.0.1-alpha.1",
+  "description": "Build Vue applications with popular bundlers just like Nuxt (CSR only).",
   "scripts": {
     "dev": "rsbuild dev",
     "build": "rsbuild build",

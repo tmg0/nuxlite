@@ -1,6 +1,6 @@
 # Nuxlite
 
-⛲ Build Vue applications with popular bundlers just like Nuxt (CSR only).
+💡 Build Vue applications with popular bundlers just like Nuxt (CSR only).
 
 ## License
 

@@ -12,7 +12,8 @@
     "strict": true,
     "noEmit": true,
     "isolatedModules": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["unplugin-vue-router/client"]
   },
-  "include": ["app", "unimport.d.ts"]
+  "include": ["app", "*.d.ts"]
 }

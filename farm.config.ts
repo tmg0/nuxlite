@@ -18,7 +18,7 @@ export default defineConfig({
 
     Unimport.vite({
       dts: true,
-      presets: ['vue'],
+      presets: ['vue', 'vue-router'],
       dirs: [
         './app/components/**/*',
         './app/composables/**/*',

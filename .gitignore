@@ -14,3 +14,4 @@ dist/
 
 # Unimport
 unimport.d.ts
+typed-router.d.ts

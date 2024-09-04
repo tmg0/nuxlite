@@ -54,6 +54,9 @@ importers:
       postcss:
         specifier: ^8.4.44
         version: 8.4.44
+      rspack-plugin-virtual-module:
+        specifier: ^0.1.13
+        version: 0.1.13
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -2878,6 +2881,9 @@ packages:
     resolution: {integrity: sha512-e3TapAgYf9xjdLvKQCkQTnbTKd4a6jwlpQSJJFokHGaX2IVjoEqkIIhiQfqsi0cdwlOD+tQGuOd5AJkc5RngBw==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
+
+  rspack-plugin-virtual-module@0.1.13:
+    resolution: {integrity: sha512-VC0HiVHH6dtGfTgfpbDgVTt6LlYv+uAg9CWGWAR5lBx9FbKPEZeGz7iRUUP8vMymx+PGI8ps0u4a25dne0rtuQ==}
 
   run-applescript@5.0.0:
     resolution: {integrity: sha512-XcT5rBksx1QdIhlFOCtgZkB99ZEouFZ1E2Kc2LHqNW13U3/74YGdkQRmThTwxy4QIyookibDKYZOPqX//6BlAg==}
@@ -6515,6 +6521,10 @@ snapshots:
       '@rollup/rollup-win32-ia32-msvc': 4.21.2
       '@rollup/rollup-win32-x64-msvc': 4.21.2
       fsevents: 2.3.3
+
+  rspack-plugin-virtual-module@0.1.13:
+    dependencies:
+      fs-extra: 11.2.0
 
   run-applescript@5.0.0:
     dependencies:

@@ -18,7 +18,7 @@ export const config = defineConfig({
     Vue(),
     VueJsx(),
 
-    Components.vite({
+    Components.farm({
       dirs: ['./app/components'],
       extensions: ['vue', 'tsx'],
       dts: './.nuxlite/components.d.ts',
@@ -26,11 +26,10 @@ export const config = defineConfig({
       collapseSamePrefixes: true,
     }),
 
-    Unimport.vite({
+    Unimport.farm({
       dts: './.nuxlite/unimport.d.ts',
       presets: ['vue', 'vue-router'],
       dirs: [
-        './app/components/**/*',
         './app/composables/**/*',
         './app/utils/**/*',
       ],

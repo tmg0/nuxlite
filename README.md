@@ -2,6 +2,36 @@
 
 💡 Build Vue applications with popular bundlers just like Nuxt (CSR only).
 
+## Features
+
+No magic code generations
+
+File-system routing with nuxt style
+
+Written in TypeScript
+
+Support multipe bundlers (Rsbuild / Farm)
+
+## Usage
+
+Clone this repository
+
+```bash
+git clone https://github.com/tmg0/nuxlite.git
+```
+
+Install dependencies (with your favourite package manager)
+
+```bash
+pnpm install
+```
+
+Run in development
+
+```bash
+pnpm build
+```
+
 ## License
 
 [MIT](./LICENSE) License © 2024-PRESENT [Tamago](https://github.com/tmg0)

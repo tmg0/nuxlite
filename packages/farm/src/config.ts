@@ -2,7 +2,7 @@ import { defineConfig } from '@farmfe/core'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import postcss from '@farmfe/js-plugin-postcss'
-import VueRouter from 'unplugin-vue-router/vite'
+import VueRouter from 'unplugin-vue-router'
 import Unimport from 'unimport/unplugin'
 import Components from 'unplugin-vue-components'
 
@@ -10,7 +10,7 @@ export const config = defineConfig({
   plugins: [postcss()],
 
   vitePlugins: [
-    VueRouter({
+    VueRouter.farm({
       routesFolder: './app/pages',
       dts: './.nuxlite/typed-router.d.ts',
     }),
@@ -37,3 +37,5 @@ export const config = defineConfig({
     }),
   ],
 })
+
+export default config

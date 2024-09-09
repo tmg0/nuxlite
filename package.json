@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "tsx packages/rsbuild dev",
     "build": "tsx packages/rsbuild build",
-    "dev:farm": "farm start",
-    "preview": "rsbuild preview",
+    "build:farm": "farm build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

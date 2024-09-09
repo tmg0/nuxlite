@@ -7,6 +7,9 @@
     "@rsbuild/plugin-vue": "1.0.1-rc.2",
     "@rsbuild/plugin-vue-jsx": "1.0.1-rc.2",
     "mri": "^1.2.0",
-    "unplugin": "^1.13.1"
+    "unimport": "^3.11.1",
+    "unplugin": "^1.13.1",
+    "unplugin-vue-components": "^0.27.4",
+    "unplugin-vue-router": "^0.10.7"
   }
 }

@@ -6,29 +6,20 @@
   "scripts": {
     "dev": "tsx packages/rsbuild dev",
     "build": "tsx packages/rsbuild build",
-    "build:farm": "farm build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@farmfe/cli": "^1.0.4",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.0.0",
-    "@farmfe/core": "^1.3.17",
-    "@farmfe/js-plugin-postcss": "^1.8.0",
-    "@vitejs/plugin-vue": "^5.1.3",
-    "@vitejs/plugin-vue-jsx": "^4.0.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.1",
     "postcss": "^8.4.44",
     "tailwindcss": "^3.4.10",
     "tsx": "^4.19.0",
-    "typescript": "^5.5.2",
-    "unimport": "^3.11.1",
-    "unplugin-vue-components": "^0.27.4",
-    "unplugin-vue-router": "^0.10.7"
+    "typescript": "^5.5.2"
   }
 }

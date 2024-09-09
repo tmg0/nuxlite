@@ -13,5 +13,4 @@ dist/
 .idea
 
 # Unimport
-unimport.d.ts
-typed-router.d.ts
+.nuxlite

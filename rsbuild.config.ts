@@ -3,7 +3,8 @@ import { pluginBabel } from '@rsbuild/plugin-babel'
 import { pluginVue } from '@rsbuild/plugin-vue'
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx'
 import Unimport from 'unimport/unplugin'
-import RspackVueRouterPlugin from 'rspack-plugin-vue-router'
+import VueRouter from 'unplugin-vue-router'
+import Components from 'unplugin-vue-components'
 
 export default defineConfig({
   source: {
@@ -21,20 +22,30 @@ export default defineConfig({
   ],
 
   tools: {
-    async rspack(config) {
-      config.plugins?.push(new RspackVueRouterPlugin({
-        routesFolder: './app/pages',
-      }))
+    rspack: {
+      plugins: [
+        VueRouter.rspack({
+          routesFolder: './app/pages',
+          dts: './.nuxlite/typed-router.d.ts',
+        }),
 
-      config.plugins?.push(Unimport.rspack({
-        dts: true,
-        presets: ['vue', 'vue-router'],
-        dirs: [
-          './app/components/**/*',
-          './app/composables/**/*',
-          './app/utils/**/*',
-        ],
-      }))
+        Components.rspack({
+          dirs: ['./app/components'],
+          extensions: ['vue', 'tsx'],
+          dts: './.nuxlite/components.d.ts',
+          directoryAsNamespace: true,
+          collapseSamePrefixes: true,
+        }),
+
+        Unimport.rspack({
+          dts: './.nuxlite/unimport.d.ts',
+          presets: ['vue', 'vue-router'],
+          dirs: [
+            './app/composables/**/*',
+            './app/utils/**/*',
+          ],
+        }),
+      ],
     },
   },
 })

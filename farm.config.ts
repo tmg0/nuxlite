@@ -4,6 +4,7 @@ import VueJsx from '@vitejs/plugin-vue-jsx'
 import postcss from '@farmfe/js-plugin-postcss'
 import VueRouter from 'unplugin-vue-router/vite'
 import Unimport from 'unimport/unplugin'
+import Components from 'unplugin-vue-components'
 
 export default defineConfig({
   plugins: [postcss()],
@@ -11,13 +12,22 @@ export default defineConfig({
   vitePlugins: [
     VueRouter({
       routesFolder: './app/pages',
+      dts: './.nuxlite/typed-router.d.ts',
     }),
 
     Vue(),
     VueJsx(),
 
+    Components.vite({
+      dirs: ['./app/components'],
+      extensions: ['vue', 'tsx'],
+      dts: './.nuxlite/components.d.ts',
+      directoryAsNamespace: true,
+      collapseSamePrefixes: true,
+    }),
+
     Unimport.vite({
-      dts: true,
+      dts: './.nuxlite/unimport.d.ts',
       presets: ['vue', 'vue-router'],
       dirs: [
         './app/components/**/*',

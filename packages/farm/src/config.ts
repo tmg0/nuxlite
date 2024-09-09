@@ -6,7 +6,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import Unimport from 'unimport/unplugin'
 import Components from 'unplugin-vue-components'
 
-export default defineConfig({
+export const config = defineConfig({
   plugins: [postcss()],
 
   vitePlugins: [
@@ -30,6 +30,7 @@ export default defineConfig({
       dts: './.nuxlite/unimport.d.ts',
       presets: ['vue', 'vue-router'],
       dirs: [
+        './app/components/**/*',
         './app/composables/**/*',
         './app/utils/**/*',
       ],

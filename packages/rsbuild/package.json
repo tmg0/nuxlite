@@ -1,0 +1,12 @@
+{
+  "name": "@nuxlite/rsbuild",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@rsbuild/core": "1.0.1-rc.2",
+    "@rsbuild/plugin-babel": "1.0.1-rc.2",
+    "@rsbuild/plugin-vue": "1.0.1-rc.2",
+    "@rsbuild/plugin-vue-jsx": "1.0.1-rc.2",
+    "mri": "^1.2.0",
+    "unplugin": "^1.13.1"
+  }
+}

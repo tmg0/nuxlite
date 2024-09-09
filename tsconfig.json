@@ -15,5 +15,5 @@
     "skipLibCheck": true,
     "types": ["unplugin-vue-router/client"]
   },
-  "include": ["app", ".nuxlite/*.d.ts"]
+  "include": ["app", "packages", ".nuxlite/*.d.ts"]
 }

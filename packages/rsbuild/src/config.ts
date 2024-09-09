@@ -6,7 +6,11 @@ import Unimport from 'unimport/unplugin'
 import VueRouter from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components'
 
-export default defineConfig({
+export const config = defineConfig({
+  html: {
+    template: './index.html',
+  },
+
   source: {
     entry: {
       index: './app/index.ts',

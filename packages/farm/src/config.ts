@@ -10,7 +10,7 @@ export const config = defineConfig({
   plugins: [postcss()],
 
   vitePlugins: [
-    VueRouter.farm({
+    VueRouter.vite({
       routesFolder: './app/pages',
       dts: './.nuxlite/typed-router.d.ts',
     }),
@@ -18,7 +18,7 @@ export const config = defineConfig({
     Vue(),
     VueJsx(),
 
-    Components.farm({
+    Components.vite({
       dirs: ['./app/components'],
       extensions: ['vue', 'tsx'],
       dts: './.nuxlite/components.d.ts',
@@ -26,7 +26,7 @@ export const config = defineConfig({
       collapseSamePrefixes: true,
     }),
 
-    Unimport.farm({
+    Unimport.vite({
       dts: './.nuxlite/unimport.d.ts',
       presets: ['vue', 'vue-router'],
       dirs: [

@@ -4,7 +4,7 @@
   "version": "0.0.1-alpha.1",
   "description": "Build Vue applications with popular bundlers just like Nuxt (CSR only).",
   "scripts": {
-    "dev": "tsx packages/rsbuild dev",
+    "dev": "tsx packages/farm dev",
     "build": "tsx packages/rsbuild build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

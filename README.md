@@ -8,6 +8,8 @@ No magic code generations
 
 File-system routing with nuxt style
 
+Full control access of entry file
+
 Written in TypeScript
 
 Support multipe bundlers (Rsbuild / Farm)
@@ -29,7 +31,7 @@ pnpm install
 Run in development
 
 ```bash
-pnpm build
+pnpm dev
 ```
 
 ## License

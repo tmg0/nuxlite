@@ -8,12 +8,12 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "types": ["unplugin-vue-router/client"],
     "allowImportingTsExtensions": true,
     "strict": true,
     "noEmit": true,
     "isolatedModules": true,
-    "skipLibCheck": true,
-    "types": ["unplugin-vue-router/client"]
+    "skipLibCheck": true
   },
   "include": ["app", "packages", ".nuxlite/*.d.ts"]
 }

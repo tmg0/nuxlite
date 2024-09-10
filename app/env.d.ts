@@ -1,7 +1,3 @@
-/// <reference types="@rsbuild/core/types" />
-/// <reference types="vite/client" />
-/// <reference types="unplugin-vue-router/client" />
-
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'
 
@@ -11,5 +7,7 @@ declare module '*.vue' {
 }
 
 declare module 'vue-router/auto-routes' {
+  import type { RouteRecordRaw } from 'vue-router'
+
   const routes: RouteRecordRaw[]
 }

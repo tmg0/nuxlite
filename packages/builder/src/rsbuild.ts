@@ -1,17 +1,20 @@
 import { createRsbuild } from '@rsbuild/core'
+import { defu } from 'defu'
 import { defineBuilder } from './core'
 import { config } from './configs/rsbuild.config'
 
 export const rsbuildBuilder = defineBuilder(config, () => {
   return {
     async start(ctx) {
-      config.server = { ...(config.server ?? {}), ...ctx.options.server }
-      const rsbuild = await createRsbuild({ rsbuildConfig: config })
+      config.server = defu(ctx.options.server ?? {}, config.server)
+      const rsbuildConfig = defu(ctx.options.rsbuild, config)
+      const rsbuild = await createRsbuild({ rsbuildConfig })
       await rsbuild.startDevServer()
     },
 
-    async build() {
-      const rsbuild = await createRsbuild({ rsbuildConfig: config })
+    async build(ctx) {
+      const rsbuildConfig = defu(ctx.options.rsbuild, config)
+      const rsbuild = await createRsbuild({ rsbuildConfig })
       await rsbuild.build()
     },
   }

@@ -1,3 +1,7 @@
+import type { RsbuildConfig } from '@rsbuild/core'
+import type { UserConfig as FarmConfig } from '@farmfe/core'
+import type { UserConfig as ViteConfig } from 'vite'
+
 export type Builder = 'rsbuild' | 'vite' | 'farm'
 
 export interface NuxliteConfigServer {
@@ -8,6 +12,9 @@ export interface NuxliteConfigServer {
 export interface NuxliteConfig {
   builder?: Builder
   server?: NuxliteConfigServer
+  rsbuild?: RsbuildConfig
+  farm?: FarmConfig
+  vite?: ViteConfig
 }
 
 export interface NuxliteContext {

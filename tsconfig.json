@@ -8,7 +8,6 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "types": ["unplugin-vue-router/client"],
     "allowImportingTsExtensions": true,
     "strict": true,
     "noEmit": true,

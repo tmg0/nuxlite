@@ -30,7 +30,7 @@ export const config = defineConfig({
         }),
 
         Components.rspack({
-          dirs: ['./app/components'],
+          dirs: ['./packages/components', './app/components'],
           extensions: ['vue', 'tsx'],
           dts: './.nuxlite/components.d.ts',
           directoryAsNamespace: true,

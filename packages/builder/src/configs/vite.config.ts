@@ -16,7 +16,7 @@ export const config = defineConfig({
     VueJsx(),
 
     Components.vite({
-      dirs: ['./app/components'],
+      dirs: ['./packages/components', './app/components'],
       extensions: ['vue', 'tsx'],
       dts: './.nuxlite/components.d.ts',
       directoryAsNamespace: true,

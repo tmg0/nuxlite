@@ -4,15 +4,15 @@
 
 ## Features
 
-No magic code generations
+🎩 No magic code generations
 
-File-system routing with nuxt style
+📂 File-system routing with nuxt style
 
-Full control access of entry file
+🎮 Full access control of entry file
 
-Written in TypeScript
+⛑️ Written in TypeScript
 
-Support multipe bundlers (Rsbuild / Farm)
+🚀 Support multipe bundlers (Vite / Rsbuild / Farm)
 
 ## Usage
 

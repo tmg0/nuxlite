@@ -12,7 +12,7 @@ export const config = defineConfig({
 
   source: {
     entry: {
-      index: './app/index.ts',
+      index: './app/main.ts',
     },
   },
 

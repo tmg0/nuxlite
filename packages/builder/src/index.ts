@@ -2,10 +2,12 @@ import process from 'node:process'
 import mri from 'mri'
 import { farmBuilder } from './farm'
 import { rsbuildBuilder } from './rsbuild'
+import { viteBuilder } from './vite'
 
 import 'dotenv/config'
 
 const BUILDER = {
+  vite: viteBuilder,
   farm: farmBuilder,
   rsbuild: rsbuildBuilder,
 }

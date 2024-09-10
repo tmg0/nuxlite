@@ -3,15 +3,26 @@ import mri from 'mri'
 import { farmBuilder } from './farm'
 import { rsbuildBuilder } from './rsbuild'
 
+import 'dotenv/config'
+
+const BUILDER = {
+  farm: farmBuilder,
+  rsbuild: rsbuildBuilder,
+}
+
 const argv = process.argv.slice(2)
 const { _ } = mri(argv)
 const [subCommand] = _
 
 async function main() {
+  let builder = BUILDER?.[process.env?.NUXLITE_BUILDER ?? '']
+
+  if (!builder)
+    builder = rsbuildBuilder
   if (subCommand === 'start')
-    await rsbuildBuilder.start()
+    await builder.start()
   if (subCommand === 'build')
-    await rsbuildBuilder.build()
+    await builder.build()
 }
 
 if (subCommand)

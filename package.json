@@ -10,17 +10,17 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "vue": "^3.4.38",
+    "vue": "^3.5.3",
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.0.0",
+    "@antfu/eslint-config": "^3.5.0",
     "@nuxlite/builder": "workspace:*",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.9.1",
-    "postcss": "^8.4.44",
+    "eslint": "^9.10.0",
+    "postcss": "^8.4.45",
     "tailwindcss": "^3.4.10",
     "tsx": "^4.19.0",
-    "typescript": "^5.5.2"
+    "typescript": "^5.6.2"
   }
 }

@@ -1,5 +1,6 @@
 import process from 'node:process'
 import mri from 'mri'
+import { resolveNuxliteConfig } from './core'
 import { farmBuilder } from './farm'
 import { rsbuildBuilder } from './rsbuild'
 import { viteBuilder } from './vite'
@@ -17,14 +18,16 @@ const { _ } = mri(argv)
 const [subCommand] = _
 
 async function main() {
-  let builder = BUILDER?.[process.env?.NUXLITE_BUILDER ?? '']
+  const options = await resolveNuxliteConfig()
+  const value = options.builder ?? process.env?.NUXLITE_BUILDER ?? ''
+  const builder = BUILDER?.[value] ?? rsbuildBuilder
 
-  if (!builder)
-    builder = rsbuildBuilder
+  const ctx = { options }
+
   if (subCommand === 'start')
-    await builder.start()
+    await builder(ctx).start()
   if (subCommand === 'build')
-    await builder.build()
+    await builder(ctx).build()
 }
 
 if (subCommand)

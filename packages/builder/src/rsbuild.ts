@@ -3,17 +3,16 @@ import { defineBuilder } from './core'
 import { config } from './configs/rsbuild.config'
 
 export const rsbuildBuilder = defineBuilder(config, () => {
-  const rsbuild = createRsbuild({ rsbuildConfig: config })
-
   return {
-    async start() {
-      const instance = await rsbuild
-      await instance.startDevServer()
+    async start(ctx) {
+      config.server = { ...(config.server ?? {}), ...ctx.options.server }
+      const rsbuild = await createRsbuild({ rsbuildConfig: config })
+      await rsbuild.startDevServer()
     },
 
     async build() {
-      const instance = await rsbuild
-      await instance.build()
+      const rsbuild = await createRsbuild({ rsbuildConfig: config })
+      await rsbuild.build()
     },
   }
 })

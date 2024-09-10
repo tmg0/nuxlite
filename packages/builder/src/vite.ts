@@ -10,14 +10,15 @@ const inlineConfig: InlineConfig = {
 }
 
 export const viteBuilder = defineBuilder(inlineConfig, {
-  async start(config) {
-    const server = await createServer(config)
+  async start(ctx) {
+    inlineConfig.server = { ...(inlineConfig.server ?? {}), ...ctx.options.server }
+    const server = await createServer(inlineConfig)
     await server.listen()
     server.printUrls()
     server.bindCLIShortcuts({ print: true })
   },
 
-  async build(config) {
-    await viteBuild(config)
+  async build() {
+    await viteBuild(inlineConfig)
   },
 })

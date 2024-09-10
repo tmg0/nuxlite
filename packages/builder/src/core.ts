@@ -30,7 +30,7 @@ export async function resolveNuxliteConfig() {
     defaults: {
       builder: 'rsbuild',
       server: {
-        port: Number(process.env?.NUXLITE_PORT) ?? 5173,
+        port: Number(process.env.NUXLITE_PORT) || 5173,
       },
     },
   })

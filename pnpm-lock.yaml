@@ -18,6 +18,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^3.0.0
         version: 3.0.0(@typescript-eslint/utils@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.4.38)(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
+      '@nuxlite/builder':
+        specifier: workspace:*
+        version: link:packages/builder
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.44)

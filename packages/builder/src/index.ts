@@ -1,6 +1,6 @@
 import process from 'node:process'
 import mri from 'mri'
-import { resolveNuxliteConfig } from './core'
+import { defineConfig, resolveNuxliteConfig } from './core'
 import { farmBuilder } from './farm'
 import { rsbuildBuilder } from './rsbuild'
 import { viteBuilder } from './vite'
@@ -34,6 +34,8 @@ if (subCommand)
   main()
 
 export {
+  defineConfig,
+  viteBuilder,
   farmBuilder,
   rsbuildBuilder,
 }

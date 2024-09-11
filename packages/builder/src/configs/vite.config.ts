@@ -9,6 +9,8 @@ import { options } from './unplugin'
 
 export const config = defineConfig({
   plugins: [
+    Virtual.vite(options.virtual),
+
     VueRouter.vite({
       routesFolder: './app/pages',
       dts: './.nuxlite/typed-router.d.ts',
@@ -16,8 +18,6 @@ export const config = defineConfig({
 
     Vue(),
     VueJsx(),
-
-    Virtual.vite(options.virtual),
 
     Components.vite({
       dirs: ['./packages/nuxt/src/components', './app/components'],

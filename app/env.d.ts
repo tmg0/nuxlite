@@ -6,8 +6,8 @@ declare module '*.vue' {
   export default component
 }
 
-declare module 'vue-router/auto-routes' {
-  import type { RouteRecordRaw } from 'vue-router'
+declare module '#router' {
+  import type { Router } from 'vue-router'
 
-  const routes: RouteRecordRaw[]
+  const router: Router
 }

@@ -1,3 +1,3 @@
 export default {
-  builder: 'rsbuild',
+  builder: 'vite',
 }

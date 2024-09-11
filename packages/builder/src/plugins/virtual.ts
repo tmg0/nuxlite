@@ -23,7 +23,7 @@ export const unplugin = createUnplugin<VirtualOptions>((options = {}) => {
         if (resolvedIds.has(resolved))
           return VIRTUAL_PREFIX + resolved
       }
-      return ''
+      return null
     },
 
     load(id) {
@@ -36,7 +36,7 @@ export const unplugin = createUnplugin<VirtualOptions>((options = {}) => {
           return typeof module === 'string' ? module : `export default ${JSON.stringify(module)}`
         }
       }
-      return ''
+      return null
     },
   }
 })

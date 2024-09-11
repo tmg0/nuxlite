@@ -4,13 +4,10 @@ import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx'
 import Unimport from 'unimport/unplugin'
 import Components from 'unplugin-vue-components'
 import VueRouter from 'unplugin-vue-router'
+import { unplugin as Virtual } from '../plugins/virtual'
 import { options } from './unplugin'
 
 export const config = defineConfig({
-  html: {
-    template: './index.html',
-  },
-
   source: {
     entry: {
       index: './app/main.ts',
@@ -25,6 +22,8 @@ export const config = defineConfig({
   tools: {
     rspack: {
       plugins: [
+        Virtual.rspack(options.virtual),
+
         VueRouter.rspack({
           routesFolder: './app/pages',
           dts: './.nuxlite/typed-router.d.ts',

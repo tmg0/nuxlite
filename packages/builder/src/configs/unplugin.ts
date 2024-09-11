@@ -1,3 +1,4 @@
+import { genImport } from 'knitwork'
 import type { UnimportPluginOptions } from 'unimport/unplugin'
 
 const unimport: Partial<UnimportPluginOptions> = {
@@ -15,7 +16,13 @@ const unimport: Partial<UnimportPluginOptions> = {
   ],
 }
 
-const virtual = {}
+const virtual = {
+  '#router': [
+    genImport('vue-router', ['createRouter', 'createWebHistory']),
+    genImport('vue-router/auto-routes', ['routes']),
+    'export const router = createRouter({ history: createWebHistory(), routes: routes ?? [], })',
+  ].join('\n'),
+}
 
 export const options = {
   virtual,

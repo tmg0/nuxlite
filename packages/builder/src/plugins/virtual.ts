@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { createUnplugin } from 'unplugin'
 
-export type VirtualOptions = Record<string, string | (() => string)>
+export type VirtualOptions = Record<string, string | (() => string)> | undefined
 
 const VIRTUAL_PREFIX = '/@virtual:unplugin-virtual/'
 

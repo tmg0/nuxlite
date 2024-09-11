@@ -1,4 +1,4 @@
-import { router } from '#router'
+import { router } from 'virtual:router'
 import { createApp } from 'vue'
 import App from './app.vue'
 

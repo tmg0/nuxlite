@@ -4,6 +4,7 @@ import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx'
 import Unimport from 'unimport/unplugin'
 import Components from 'unplugin-vue-components'
 import VueRouter from 'unplugin-vue-router'
+import { unplugin as OutputFile } from '../plugins/output-file'
 import { unplugin as Virtual } from '../plugins/virtual'
 import { options } from './unplugin'
 
@@ -23,6 +24,7 @@ export const config = defineConfig({
     rspack: {
       plugins: [
         Virtual.rspack(options.virtual),
+        OutputFile.rspack(options.outputFile),
 
         VueRouter.rspack({
           routesFolder: './app/pages',

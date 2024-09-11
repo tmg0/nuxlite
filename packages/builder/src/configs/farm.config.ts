@@ -1,10 +1,12 @@
 import { defineConfig } from '@farmfe/core'
+import postcss from '@farmfe/js-plugin-postcss'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
-import postcss from '@farmfe/js-plugin-postcss'
-import VueRouter from 'unplugin-vue-router'
 import Unimport from 'unimport/unplugin'
 import Components from 'unplugin-vue-components'
+import VueRouter from 'unplugin-vue-router'
+import { unplugin as Virtual } from '../plugins/virtual'
+import { options } from './unplugin'
 
 export const config = defineConfig({
   plugins: [postcss()],
@@ -18,22 +20,17 @@ export const config = defineConfig({
     Vue(),
     VueJsx(),
 
+    Virtual.vite(options.virtual),
+
     Components.vite({
-      dirs: ['./packages/components', './app/components'],
+      dirs: ['./packages/nuxt/src/components', './app/components'],
       extensions: ['vue', 'tsx'],
       dts: './.nuxlite/components.d.ts',
       directoryAsNamespace: true,
       collapseSamePrefixes: true,
     }),
 
-    Unimport.vite({
-      dts: './.nuxlite/unimport.d.ts',
-      presets: ['vue', 'vue-router'],
-      dirs: [
-        './app/composables/**/*',
-        './app/utils/**/*',
-      ],
-    }),
+    Unimport.vite(options.unimport),
   ],
 })
 

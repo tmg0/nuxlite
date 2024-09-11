@@ -21,6 +21,9 @@ importers:
       '@nuxlite/builder':
         specifier: workspace:*
         version: link:packages/builder
+      '@nuxlite/nuxt':
+        specifier: workspace:*
+        version: link:packages/nuxt
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.45)
@@ -78,6 +81,9 @@ importers:
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
+      knitwork:
+        specifier: ^1.1.0
+        version: 1.1.0
       mri:
         specifier: ^1.2.0
         version: 1.2.0
@@ -96,6 +102,8 @@ importers:
       vite:
         specifier: ^5.4.3
         version: 5.4.3(@types/node@22.5.2)(terser@5.31.6)
+
+  packages/nuxt: {}
 
 packages:
 
@@ -2594,6 +2602,9 @@ packages:
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
+
+  knitwork@1.1.0:
+    resolution: {integrity: sha512-oHnmiBUVHz1V+URE77PNot2lv3QiYU2zQf1JjOVkMt3YDKGbu8NAFr+c4mcNOhdsGrB/VpVbRwPwhiXrPhxQbw==}
 
   koa-compose@4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
@@ -6608,6 +6619,8 @@ snapshots:
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
+
+  knitwork@1.1.0: {}
 
   koa-compose@4.1.0: {}
 

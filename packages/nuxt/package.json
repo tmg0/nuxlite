@@ -1,5 +1,5 @@
 {
-  "name": "@nuxlite/components",
+  "name": "@nuxlite/nuxt",
   "type": "module",
   "main": "./src/index.ts"
 }

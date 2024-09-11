@@ -1,7 +1,7 @@
 import { createRsbuild } from '@rsbuild/core'
 import { defu } from 'defu'
-import { defineBuilder } from './core'
 import { config } from './configs/rsbuild.config'
+import { defineBuilder } from './core'
 
 export const rsbuildBuilder = defineBuilder(config, () => {
   return {

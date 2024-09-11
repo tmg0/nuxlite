@@ -2,8 +2,9 @@ import { defineConfig } from '@rsbuild/core'
 import { pluginVue } from '@rsbuild/plugin-vue'
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx'
 import Unimport from 'unimport/unplugin'
-import VueRouter from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components'
+import VueRouter from 'unplugin-vue-router'
+import { options } from './unplugin'
 
 export const config = defineConfig({
   html: {
@@ -30,21 +31,14 @@ export const config = defineConfig({
         }),
 
         Components.rspack({
-          dirs: ['./packages/components', './app/components'],
+          dirs: ['./packages/nuxt/src/components', './app/components'],
           extensions: ['vue', 'tsx'],
           dts: './.nuxlite/components.d.ts',
           directoryAsNamespace: true,
           collapseSamePrefixes: true,
         }),
 
-        Unimport.rspack({
-          dts: './.nuxlite/unimport.d.ts',
-          presets: ['vue', 'vue-router'],
-          dirs: [
-            './app/composables/**/*',
-            './app/utils/**/*',
-          ],
-        }),
+        Unimport.rspack(options.unimport),
       ],
     },
   },

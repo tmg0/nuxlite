@@ -16,7 +16,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.5.0",
     "@nuxlite/builder": "workspace:*",
-    "@nuxlite/components": "workspace:*",
+    "@nuxlite/nuxt": "workspace:*",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.10.0",
     "postcss": "^8.4.45",

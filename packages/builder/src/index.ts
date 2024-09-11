@@ -1,13 +1,13 @@
 import process from 'node:process'
 import mri from 'mri'
-import { defineConfig, resolveNuxliteConfig } from './core'
+import { type defineBuilder, defineConfig, resolveNuxliteConfig } from './core'
 import { farmBuilder } from './farm'
 import { rsbuildBuilder } from './rsbuild'
 import { viteBuilder } from './vite'
 
 import 'dotenv/config'
 
-const BUILDER = {
+const BUILDER: Record<string, ReturnType<typeof defineBuilder>> = {
   vite: viteBuilder,
   farm: farmBuilder,
   rsbuild: rsbuildBuilder,
@@ -35,7 +35,7 @@ if (subCommand)
 
 export {
   defineConfig,
-  viteBuilder,
   farmBuilder,
   rsbuildBuilder,
+  viteBuilder,
 }

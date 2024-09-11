@@ -4,12 +4,14 @@ import Unimport from 'unimport/unplugin'
 import Components from 'unplugin-vue-components'
 import VueRouter from 'unplugin-vue-router'
 import { defineConfig } from 'vite'
+import { unplugin as Generator } from '../plugins/generator'
 import { unplugin as Virtual } from '../plugins/virtual'
 import { options } from './unplugin'
 
 export const config = defineConfig({
   plugins: [
     Virtual.vite(options.virtual),
+    Generator.vite(options.generator),
 
     VueRouter.vite({
       routesFolder: './app/pages',

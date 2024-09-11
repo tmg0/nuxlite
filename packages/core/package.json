@@ -1,0 +1,9 @@
+{
+  "name": "@nuxlite/core",
+  "type": "module",
+  "main": "./index.mjs",
+  "types": "./index.d.ts",
+  "dependencies": {
+    "@nuxlite/builder": "workspace:*"
+  }
+}

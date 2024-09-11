@@ -33,6 +33,8 @@ async function main() {
 if (subCommand)
   main()
 
+export * from './types'
+
 export {
   defineConfig,
   farmBuilder,

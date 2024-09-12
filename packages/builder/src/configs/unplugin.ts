@@ -19,7 +19,11 @@ const virtual = {
   'virtual:router': [
     'import { createRouter, createWebHistory } from \'vue-router\'',
     'import { routes } from \'vue-router/auto-routes\'',
+    'import { useNuxlite } from \'@nuxlite/core\'',
     'export const router = createRouter({ history: createWebHistory(), routes: routes ?? [], })',
+    'const nuxlite = useNuxlite()',
+    'router.beforeEach(() => { nuxlite.processingMiddleware.value = true })',
+    'router.afterEach(() => { nuxlite.processingMiddleware.value = false })',
   ].join('\n'),
 }
 

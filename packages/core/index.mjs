@@ -1,1 +1,1 @@
-export * from '@nuxlite/builder'
+export const defineConfig = options => options

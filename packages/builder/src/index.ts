@@ -1,6 +1,6 @@
 import process from 'node:process'
 import mri from 'mri'
-import { type defineBuilder, defineConfig, resolveNuxliteConfig } from './core'
+import { type defineBuilder, resolveNuxliteConfig } from './core'
 import { farmBuilder } from './farm'
 import { rsbuildBuilder } from './rsbuild'
 import { viteBuilder } from './vite'
@@ -36,7 +36,6 @@ if (subCommand)
 export * from './types'
 
 export {
-  defineConfig,
   farmBuilder,
   rsbuildBuilder,
   viteBuilder,

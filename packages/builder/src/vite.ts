@@ -1,8 +1,8 @@
 import process from 'node:process'
-import { type InlineConfig, createServer, build as viteBuild } from 'vite'
 import { defu } from 'defu'
-import { defineBuilder } from './core'
+import { createServer, type InlineConfig, build as viteBuild } from 'vite'
 import { config } from './configs/vite.config'
+import { defineBuilder } from './core'
 
 const inlineConfig: InlineConfig = {
   root: process.cwd(),

@@ -1,7 +1,7 @@
 import { build, start } from '@farmfe/core'
 import { defu } from 'defu'
-import { defineBuilder } from './core'
 import { config } from './configs/farm.config'
+import { defineBuilder } from './core'
 
 export const farmBuilder = defineBuilder(config, {
   async start(ctx) {

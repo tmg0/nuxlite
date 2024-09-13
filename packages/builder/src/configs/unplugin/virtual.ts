@@ -25,7 +25,7 @@ export default {
     'const nuxlite = useNuxlite()',
     'router.beforeEach(() => { nuxlite.processingMiddleware.value = true })',
     'router.afterEach(() => { nuxlite.processingMiddleware.value = false })',
-    guardInjection,
+    entries.length ? guardInjection : '',
     'export { routes }',
   ].join('\n'),
 }

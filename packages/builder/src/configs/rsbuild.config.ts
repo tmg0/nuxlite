@@ -1,9 +1,9 @@
 import { defineConfig } from '@rsbuild/core'
 import { pluginVue } from '@rsbuild/plugin-vue'
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx'
+import RspackVueRouterPlugin from 'rspack-plugin-vue-router'
 import Unimport from 'unimport/unplugin'
 import Components from 'unplugin-vue-components'
-import VueRouter from 'unplugin-vue-router'
 import { unplugin as Generator } from '../plugins/generator'
 import { unplugin as Virtual } from '../plugins/virtual'
 import { options } from './unplugin'
@@ -26,7 +26,7 @@ export const config = defineConfig({
         Virtual.rspack(options.virtual),
         Generator.rspack(options.generator),
 
-        VueRouter.rspack({
+        new RspackVueRouterPlugin({
           routesFolder: './app/pages',
           dts: './.nuxlite/typed-router.d.ts',
         }),

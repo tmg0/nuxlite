@@ -1,9 +1,10 @@
-import path from 'node:path'
+import { platform } from 'node:os'
+import { dirname, resolve } from 'node:path'
 import { createUnplugin } from 'unplugin'
 
 export type VirtualOptions = Record<string, string | (() => string)> | undefined
 
-const VIRTUAL_PREFIX = '/@virtual:unplugin-virtual/'
+const VIRTUAL_PREFIX = platform() === 'win32' ? '\\@virtual:unplugin-virtual\\' : '/@virtual:unplugin-virtual/'
 
 export const unplugin = createUnplugin<VirtualOptions>((options = {}) => {
   const resolvedIds = new Map<string, string>()
@@ -19,7 +20,7 @@ export const unplugin = createUnplugin<VirtualOptions>((options = {}) => {
         const importerNoPrefix = importer.startsWith(VIRTUAL_PREFIX)
           ? importer.slice(VIRTUAL_PREFIX.length)
           : importer
-        const resolved = path.resolve(path.dirname(importerNoPrefix), id)
+        const resolved = resolve(dirname(importerNoPrefix), id)
         if (resolvedIds.has(resolved))
           return VIRTUAL_PREFIX + resolved
       }

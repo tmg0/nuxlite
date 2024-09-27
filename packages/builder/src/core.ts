@@ -1,6 +1,7 @@
 import type { NuxliteConfig, NuxliteContext } from './types'
 import process from 'node:process'
-import { loadConfig } from 'c12'
+import defu from 'defu'
+import oxrun from 'oxrun'
 
 import 'dotenv/config'
 
@@ -22,16 +23,12 @@ export function defineBuilder<T>(config: T, options: Options | (() => Options)) 
 }
 
 export async function resolveNuxliteConfig() {
-  const { config } = await loadConfig<NuxliteConfig>({
-    name: 'nuxlite',
+  const { default: config } = await oxrun.import<{ default: NuxliteConfig }>('./nuxlite.config.ts')
 
-    defaults: {
-      builder: 'rsbuild',
-      server: {
-        port: Number(process.env.NUXLITE_PORT) || 5173,
-      },
+  return defu(config, {
+    builder: 'rsbuild',
+    server: {
+      port: Number(process.env.NUXLITE_PORT) || 5173,
     },
   })
-
-  return config
 }

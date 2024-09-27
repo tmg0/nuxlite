@@ -7,7 +7,6 @@ export const rsbuildBuilder = defineBuilder(config, () => {
   if (!config.html)
     config.html = {}
 
-
   return {
     async start(ctx) {
       config.server = defu(ctx.options.server ?? {}, config.server)

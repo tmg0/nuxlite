@@ -30,5 +30,5 @@ export async function resolveNuxliteConfig() {
     server: {
       port: Number(process.env.NUXLITE_PORT) || 5173,
     },
-  })
+  }) as NuxliteConfig
 }

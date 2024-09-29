@@ -31,8 +31,8 @@ importers:
         specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.6)
       oxrun:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.2.4
+        version: 0.2.4
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -3130,8 +3130,8 @@ packages:
   outdent@0.5.0:
     resolution: {integrity: sha512-/jHxFIzoMXdqPzTaCpFzAAWhpkSjZPF4Vsn6jAfNpmbH/ymsmd7Qc6VE9BGn0L6YMj6uwpQLxCECpus4ukKS9Q==}
 
-  oxrun@0.2.3:
-    resolution: {integrity: sha512-yRXh+EtnuYYlM/ARAjVIF1/48aYaSBuQJIX2EEsZUjC3xSDFJiNBwfy7TBc22FQQyJDjSSc6sG/yZ7grgbkypA==}
+  oxrun@0.2.4:
+    resolution: {integrity: sha512-wowHeRofvfoX8QPaFDFAGFPn3Q5AoeFBWb1jEDAuYMWi58gfwSOpGcIHWJ+m13F2JEgRo9OM8+aNdB8TfG4+LA==}
     hasBin: true
 
   p-filter@2.1.0:
@@ -7439,7 +7439,7 @@ snapshots:
 
   outdent@0.5.0: {}
 
-  oxrun@0.2.3:
+  oxrun@0.2.4:
     dependencies:
       '@oxc-node/core': 0.0.15
       chokidar: 4.0.1

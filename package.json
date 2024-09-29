@@ -19,7 +19,7 @@
     "@nuxlite/core": "workspace:*",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.11.1",
-    "oxrun": "^0.2.3",
+    "oxrun": "^0.2.4",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "tsx": "^4.19.1",
